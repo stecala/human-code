@@ -1,0 +1,57 @@
+1. Ordinare una pizza
+Tu non hai fame?!
+Dopo una lunga giornata passata al pc, ho proprio voglia di concedermi una bella pizza succulenta! Sì, ma quale? Fammi dare un occhio al listino… Va beh, è inutile, tanto alla fine ordino sempre la stessa: una classica prosciutto e funghi. La pizza arriva ancora fumante, chissà se riuscirò a mangiarla tutta!
+Di sicuro se ne avanzo una fetta devo ricordarmi di metterla in frigo, non come l’ultima volta!
+
+
+?Se ho fame
+	Apro Google:
+		Cerco una pizzeria di asporto nelle vicinanze
+		Trovo una listaPizzerie:
+		per ogni Pizzeria presente in listaPizzerie entro le 3 pagine
+            ?se c'è una Pizzeria in ListaPizzerie
+                guardo le recensioni
+                ?se Recensione > 4
+                    cerco il listino
+                    ?se non lo trovo
+                        cerco nuova pizzeria
+                    ?altrimenti  #HoTrovatoUnMenu
+                        apro il menu
+                        scorro il menu
+                        scelgo la pizza
+                        scelgo la quantità
+
+                        ?not (ho contanti a casa?)
+                            ?si può pagare tramite carta
+                                inserisco le informazioni della carta		
+                                ordino tramite browser #pagamentoConCarta
+                            ?altrimenti
+                                cerco nuova pizzeria
+
+                        ?altrimenti #HoContantiACasa
+                            scelgo come pagare	
+                            ?se pago tramite carta			
+                                inserisco le informazioni della carta			
+                                ordino tramite browser #pagamentoConCarta
+                            ?altrimenti
+                                pago all’arrivo del fattorino
+
+                        comunico la pizza
+                        comunico l’indirizzo
+                        comunico la quantità
+                        confermo l’ordine
+                        interrompo il ciclo
+            
+                Attendo il fattorino
+                esco di casa
+                ?se pagamento in contanti
+                    lo pago
+                porto la pizza in casa
+                apparecchio
+                mangio la pizza
+                ?se non finisco la pizza
+                    la metto nel frigo
+            ?altrimenti
+                digiuno
+        se tempo trascorso > 20 minuti
+            digiuno
